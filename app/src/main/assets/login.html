@@ -6,10 +6,27 @@
     <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
-<body data-theme="a" style="background-image:url(a.jpg)">
+
+<script  type="text/JavaScript" language="javascript">
+    function login(){
+         var password = document.getElementById("password").value;
+         var account = document.getElementById("account").value;
+         if(""==account||""==password){
+               alert("用户名或密码不能为空！");
+         }else{
+               window.testform.send(account+"|"+password);   //由于对象映射，所以调用test对象等于调用android映射对象。
+         }
+
+
+
+    }
+
+
+</script>
+<body>
 <div data-role="page" >
     <div data-role="content" >
-        <form method="post" action="login">
+        <form method="post" name="userInfo" action="">
 
             <div>
                 <div style="float:left">
@@ -37,7 +54,7 @@
             </div>
             <div style="margin-top:20px;margin-left:60px">
                 <div style="display:inline-block;float:left;margin-left:30px;width:60px">
-                    <input type="submit" data-inline="true" value="登陆">
+                    <input type="submit" data-inline="true" value="登陆" onclick="login()">
                 </div>
                 <div style="display:inline-block;width:60px;margin-left:20px">
                     <input type="submit" data-inline="true" value="注册">
